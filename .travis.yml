@@ -1,0 +1,20 @@
+language: go
+
+services:
+  - docker
+
+addons:
+  apt:
+    update: true
+#
+# go:
+#   - 1.12.4
+
+before_install:
+  - sudo apt-get install -y curl jq
+  - docker build . -t travistest:latest
+  - docker ps -a
+  - docker run --rm -d travistest:latest
+
+script:
+  - ./test.sh
