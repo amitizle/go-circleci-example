@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ENDPOINT="http://127.0.0.1:8080"
+ENDPOINT="http://0.0.0.0:8080"
 
 REQ=$(curl -sL "$ENDPOINT/")
 
